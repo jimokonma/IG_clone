@@ -7,28 +7,7 @@ export const POSTS = [
     likes: 8000,
     caption: "Lorem ipsum dolor sit amet",
     profile_picture: USERS[0].image,
-    comment: [
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
-    ],
+    comments: [],
   },
   {
     imageUri:
@@ -37,7 +16,17 @@ export const POSTS = [
     likes: 200,
     caption: "Lorem ipsum dolor sit amet",
     profile_picture: USERS[1].image,
-    comment: [
+    comments: [
+      {
+        user: "theqazme",
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      },
+      {
+        user: "theqazme",
+        comment:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
+      },
       {
         user: "theqazme",
         comment:
@@ -67,22 +56,7 @@ export const POSTS = [
     likes: 200,
     caption: "Lorem ipsum dolor sit amet",
     profile_picture: USERS[2].image,
-    comment: [
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
-      {
-        user: "theqazme",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
-      },
+    comments: [
       {
         user: "theqazme",
         comment:
@@ -92,12 +66,12 @@ export const POSTS = [
   },
   {
     imageUri:
-      "https://images.unsplash.com/photo-1653652982743-d27ddfe59753?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y3J5cHRvJTIwdHJhZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+      "https://images.unsplash.com/photo-1657299143548-658603d76b1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60",
     user: USERS[3].user,
     likes: 200,
     caption: "Lorem ipsum dolor sit amet",
     profile_picture: USERS[3].image,
-    comment: [
+    comments: [
       {
         user: "theqazme",
         comment:
@@ -122,12 +96,12 @@ export const POSTS = [
   },
   {
     imageUri:
-      "https://images.unsplash.com/photo-1649274496773-c40eacd66e2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3J5cHRvJTIwdHJhZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
-    user: USERS[1].user,
+      "https://images.unsplash.com/photo-1660169234504-e2bacf16fd7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60",
+    user: USERS[4].user,
     likes: 200,
     caption: "Lorem ipsum dolor sit amet",
-    profile_picture: USERS[1].image,
-    comment: [
+    profile_picture: USERS[4].image,
+    comments: [
       {
         user: "theqazme",
         comment:
