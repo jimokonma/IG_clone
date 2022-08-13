@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import BottomTabs, { bottomTabsIcons } from "../components/home/BottomTabs";
 import Header from "../components/home/Header";
 import Post from "../components/home/Post";
 import Stories from "../components/home/Stories";
@@ -15,6 +16,7 @@ function HomeScreen(props) {
           return <Post postData={data.item} />;
         }}
       />
+      <BottomTabs icons={bottomTabsIcons} />
     </SafeAreaView>
   );
 }
