@@ -3,6 +3,8 @@ import * as yup from "yup";
 import { Formik } from "formik";
 import { useState } from "react";
 import { Divider } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
+import validUrl from "valid-url";
 
 const PLACEHOLDER_IMG =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1022px-Placeholder_view_vector.svg.png";
@@ -14,11 +16,16 @@ const uploadPostSchema = yup.object().shape({
 
 const FormikPostUploader = () => {
   const [thumbnailUrl, setThumbnailUrl] = useState(PLACEHOLDER_IMG);
+  const navigation = useNavigation();
   return (
     <>
       <Formik
         initialValues={{ caption: "", imageUrl: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          console.log(values);
+          console.log("Your post was uploaded successfully");
+          navigation.goBack();
+        }}
         validationSchema={uploadPostSchema}
         validateOnMount={true}
       >
@@ -39,7 +46,11 @@ const FormikPostUploader = () => {
               }}
             >
               <Image
-                source={{ uri: thumbnailUrl ? thumbnailUrl : PLACEHOLDER_IMG }}
+                source={{
+                  uri: validUrl.isUri(thumbnailUrl)
+                    ? thumbnailUrl
+                    : PLACEHOLDER_IMG,
+                }}
                 style={{ width: 100, height: 100 }}
               />
 

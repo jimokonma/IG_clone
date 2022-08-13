@@ -1,15 +1,5 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { View, StyleSheet } from "react-native";
-import HomeScreen from "./screens/HomeScreen";
-import NewPostScreen from "./screens/NewPostScreen";
-const Stack = createStackNavigator();
+import SignedInStack from "./screens/Navigation";
 
 export default function App() {
-  // return <HomeScreen />;
-  return <NewPostScreen />;
+  return <SignedInStack />;
 }
-
-const styles = StyleSheet.create({
-  container: {},
-});

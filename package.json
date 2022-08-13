@@ -21,6 +21,7 @@
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~2.2.1",
     "react-native-web": "0.17.7",
+    "valid-url": "^1.0.9",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -1,14 +1,19 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 function Header(props) {
+  const navigation = useNavigation();
+
+  const handleAddPost = () => navigation.navigate("NewPostScreen");
+
   return (
     <View style={styles.container}>
       <TouchableOpacity>
         <Image style={styles.logo} source={require("../../assets/logo.png")} />
       </TouchableOpacity>
       <View style={styles.iconsContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleAddPost}>
           <AntDesign name="plussquareo" size={24} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity>
