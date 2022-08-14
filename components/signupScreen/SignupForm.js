@@ -10,11 +10,16 @@ import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Validator from "email-validator";
-const LoginForm = () => {
+
+const SignupForm = () => {
   const navigation = useNavigation();
 
-  const loginFromSchema = yup.object().shape({
+  const signupFromSchema = yup.object().shape({
     email: yup.string().email().required("An email is required"),
+    username: yup
+      .string()
+      .required()
+      .min(2, "A username is required with at least 2 characters"),
     password: yup
       .string()
       .required()
@@ -24,9 +29,9 @@ const LoginForm = () => {
   return (
     <View style={styles.wrapper}>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", username: "", password: "" }}
         onSubmit={(values) => console.log(values)}
-        validationSchema={loginFromSchema}
+        validationSchema={signupFromSchema}
         validateOnMount={true}
       >
         {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
@@ -59,6 +64,28 @@ const LoginForm = () => {
                 styles.inputField,
                 {
                   borderColor:
+                    1 > values.username.length || values.username.length >= 2
+                      ? "#ccc"
+                      : "red",
+                },
+              ]}
+            >
+              <TextInput
+                placeholderTextColor={"#444"}
+                placeholder="username"
+                autoCapitalize="none"
+                keyboardType="default"
+                autoFocus={true}
+                onChangeText={handleChange("username")}
+                onBlur={handleBlur("username")}
+                value={values.username}
+              />
+            </View>
+            <View
+              style={[
+                styles.inputField,
+                {
+                  borderColor:
                     1 > values.password.length || values.password.length >= 6
                       ? "#ccc"
                       : "red",
@@ -77,23 +104,20 @@ const LoginForm = () => {
                 value={values.password}
               />
             </View>
-            <View style={{ alignItems: "flex-end", marginBottom: 30 }}>
-              <Text style={{ color: "#6bb0f5" }}>Forgot password</Text>
-            </View>
             <Pressable
               titleSize={20}
               style={styles.button(isValid)}
               onPress={handleSubmit}
             >
-              <Text style={styles.buttonText}>Log in</Text>
+              <Text style={styles.buttonText}>Sign up</Text>
             </Pressable>
           </View>
         )}
       </Formik>
       <View style={styles.signupContainer}>
-        <Text>Don't have an account?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("SignupScreen")}>
-          <Text style={{ color: "#6bb0f5" }}> Sign up</Text>
+        <Text>Have an account?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+          <Text style={{ color: "#6bb0f5" }}> Log in</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -129,4 +153,5 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
 });
-export default LoginForm;
+
+export default SignupForm;
